@@ -1,0 +1,52 @@
+/*ここがコメント行となる*/
+
+
+*{
+  background-color: #E1F5F0;
+}
+/*
+#BBF7DA
+#F0E6F7
+#E1F5F0
+*/
+
+.hyodai {
+  color: #000000;
+  text-align: center;
+  /*background-color: red;*/
+}
+
+.body{
+  position: relative;
+  /*top: 100px;*/
+  top: -30px;
+  left: 100px;
+  font-weight: bold;
+}
+
+#subtitle{
+  position: relative;
+  /*top: 100px;*/
+  left: 75px;
+}
+
+a {
+  color: #3E5FB5;
+}
+
+a:hover {
+    color: #F71156;
+}
+
+.python_title {
+  color : red;
+  /*#F5CB11,#FAA537,#C4A30E,#FAA537*/
+}
+
+.html_title {
+  color : #59BF11;
+}
+
+.linux_title {
+  color : #FAA537;
+}
