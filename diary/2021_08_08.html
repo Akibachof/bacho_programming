@@ -10,7 +10,6 @@
 
   <body>
     <h1>勉強日記 2021/08/08</h1>
-    2021/8/8未明
 
     Macでやったことメモ
 
@@ -18,9 +17,8 @@
 
     <p>
       <blockquote>
-        https://github.com/Akibachof
-        <br>
-        から
+        <a href="https://github.com/Akibachof">自分のgithub</a>
+        からターミナルに
         <br>
         git clone https://github.com/Akibachof/bacho_english.git
         <br>
@@ -30,81 +28,91 @@
         <br>
       </blockquote>
 
-      のコマンドを使って、web公開したサイトのリモートリポジトリとローカルを連携することで、atomからサイトを操作したい。
+      のコマンドを使って、web公開したサイトのリモートリポジトリとローカルを連携することで、atomからサイトを編集したい。
     <p/>
-
-
+    <br>
 
     <p>
-      webサイトを公開するためにgithubとローカルを紐付けしようとしたらエラーが出た(gitcloneとかするとき)。
-
+      上記のコマンドをターミナルに入力すると、エラーが出た。
+      <br>
+      <blockquote>
+        "xcrun: error: invalid active developer path"
+      </blockquote>
       そのため、
       <a href="https://qiita.com/kooohei/items/6aada548eeb785dd2c91">https://qiita.com/kooohei/items/6aada548eeb785dd2c91</a>
-      を参考にコマンドラインデベロッパーツールとやらをDLした
+      を参考にコマンドラインデベロッパーツールとやらをDLした。
       <br>
-      → このエラーは解決
+      → 解決
     </p>
+    <br>
 
 
     <p>
-      続いて
+      もう一度 git cloneを試みると、今度はリポジトリの複製がうまくいった。<br>
+      しかし、新たなエラーが発生した。
       <br>
         <blockquote cite="http://">
           fatal: Unable to find remote helper for 'https'
         </blockquote>
-      というエラーが出た。
-      <br>
+      現状の問題を整理すると、
+      <br><br>
       問題点1：gitcloneでリモートからコピーしてきたディレクトリがatom上で全然反応してくれない(pullとかpushのボタンが出ない)
       <br>
       問題点2：すでにgithubと連携してあったTCADフォルダもプロジェクトを開いても反応してくれない
+      <br>
+      <br>
+      どうやらhttpsのためのhelperがないかららしい。gitのバージョンが古いのが原因っぽい？(2番目の参考サイトより)<br>
+      参考：
+      <p><a href="https://qiita.com/qualitia_cdev/items/8315e6d7badbb5ddd0c6">https://qiita.com/qualitia_cdev/items/8315e6d7badbb5ddd0c6</a></p>
+      <p><a href="https://nplll.com/2019/10/macos-update-in-trouble/">https://nplll.com/2019/10/macos-update-in-trouble/</a></p>
+      <br>
+      そのままgitをアプデしてはつまらないので、インストールされてるgitのバージョンと最新バージョンを確認してみる。<br><br>
+
+      git --versionで確認すると、2.30.1が入ってる模様。最新版は
+      <a href="https://git-scm.com/">https://git-scm.com/</a>を参照。
+      <br>
+      2021/8/8現在、ver 2.32.0が最新の模様<br><br><br>
+
+      ということで、gitのアプデをするのにhomebrewを使うことにしたが、なぜかM1 Macには入ってなかった。
+      <br>
+      <a href="https://www.teamxeppet.com/macbook-m1-homebrew-install/">https://www.teamxeppet.com/macbook-m1-homebrew-install/</a>
+      を参考にインスコ。<br><br>
+      homebrewのインストールが済んだ。次にパスを通す必要があるらしい。<br>
+      以下の2つ
+      <br>
+      <blockquote>
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/akibaatsuhiro/.zprofile
+        <br>
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      </blockquote>
+      を打ちこめっていうのでその通りにした。brew helpコマンドを打つとちゃんとhelpが出てきたので、上手く行った模様。
+      <br><br>
+
+      brew -v と打つとバージョン3.2.6が無事インストールされたことがわかった。
+      <br><br>
+
+      ということでgitのアプデを行う。
+      <blockquote>
+        brew install git
+      </blockquote>
+
+      その場でバージョンを確認すると、2.30.1のまま。うまく行ってないのかと思いきや、
+      ターミナルのウィンドウを開いたままだと新しいgitのパスが変わらないことが原因らしい。
+      <br>
+      ターミナルを再起動してもう一回確認すると、2.32.0が入ってることが確認できた。
+
+      <br>
+      <br>
+      <h3>さいごに一言</h3>
+      そもそもgitのアップデートするなら<br>
+      brew upgrade git<br>
+      でええやんけ<br><br>
     </p>
 
-      
-
-
-
-    参考
-    https://qiita.com/qualitia_cdev/items/8315e6d7badbb5ddd0c6
-
-    https://nplll.com/2019/10/macos-update-in-trouble/
-
-    どうやらhttpsのためのhelperがないかららしい。gitのバージョンが古いのが原因っぽい？(2番目の参考サイト)<br>
-    そのままgitをアプデしてはつまらないので、インストールされてるgitのバージョンと最新バージョンを確認してみる。<br><br>
-
-    git —versionで確認すると、2.30.1が入ってる模様。最新版は(https://git-scm.com/)<br>
-    2.32.0の模様<br><br>
-
-    gitのアプデをするのにhomebrewを使うことにしたが、なぜかM1 Macには入ってなかったので、https://www.teamxeppet.com/macbook-m1-homebrew-install/
-    を参考にインスコ<br><br>
-
-    homebrewのインストールが済んだ。次にパスを通す必要があるらしい。<br>
-    以下の2つ<br>
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/akibaatsuhiro/.zprofile
-    <br>
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    <br>
-    を打ちこめっていうのでその通りにした。brew helpコマンドを打つとちゃんとhelpが出てきたので、上手く行った模様。
-    <br><br>
-
-    brew -v と打つとバージョン3.2.6が入ってることがわかった。
-    <br><br>
-
-    ということでgitのアプデを行う。
-    <br>
-    brew install git
-    <br>
-
-    その場でバージョンを確認すると、2.30.1のまま。うまく行ってないのかと思いきや、ターミナルのウィンドウを開いたままだと新しいgitのパスが変わらないことが原因らしい。
-    <br>
-    ターミナルを再起動してもう一回確認すると、2.32.0が入ってることが確認できた。
-
-    <br>
-    てかアップデートするなら<br>
-    brew upgrade git<br>
-    でええやんけ<br><br>
-
-
     上手にできました
+    <br>
+    <br>
+
   </body>
 
 
