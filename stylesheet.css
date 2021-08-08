@@ -12,6 +12,8 @@
 #E1F5F0
 */
 
+
+
 .hyodai {
   color: #000000;
   text-align: center;
@@ -27,6 +29,36 @@
 }
 
 #subtitle{
+  position: relative;
+  /*top: 100px;*/
+  left: 75px;
+}
+
+#index1{
+  position: relative;
+  /*top: 100px;*/
+  left: 75px;
+}
+
+#index2{
+  position: relative;
+  /*top: 100px;*/
+  left: 75px;
+}
+
+#index3{
+  position: relative;
+  /*top: 100px;*/
+  left: 75px;
+}
+
+#index4{
+  position: relative;
+  /*top: 100px;*/
+  left: 75px;
+}
+
+#index5{
   position: relative;
   /*top: 100px;*/
   left: 75px;
