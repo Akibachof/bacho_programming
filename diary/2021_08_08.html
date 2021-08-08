@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- 乃木坂の公式サイトでは、上の記述は <link href="/Users/akibaatsuhiro/Desktop/nogizaka_copy.css" type="text/css" rel="stylesheet" media="screen,tv,print"> となっていた-->
+    <title>2021/8/8</title>
+  </head>
+
+
+  <body>
+    <h1>勉強日記 2021/08/08</h1>
+    2021/8/8未明
+
+    Macでやったことメモ
+
+    目標
+    https://github.com/Akibachof/bacho_english.git
+
+    /Users/akibaatsuhiro/Documents/programming
+
+    git clone https://github.com/Akibachof/bacho_english.git
+
+    git clone https://github.com/Akibachof/bacho_programming.git
+
+    web公開したサイトに関して、githubを連携することでatomからサイトを操作したい。
+
+
+
+    webサイトを公開するためにgithubとローカルを紐付けしようとしたらエラーが出た。(gitcloneとかするとき)
+
+    そのためhttps://qiita.com/kooohei/items/6aada548eeb785dd2c91
+    を参考にコマンドラインデベロッパーツールとやらをDLした
+
+    ↑のエラーは解決
+
+    続いて
+    fatal: Unable to find remote helper for 'https'
+    というエラーが出た。
+    問題点1：gitcloneでリモートからコピーしてきたディレクトリがatom上で全然反応してくれない(pullとかpushのボタンが出ない)
+    問題点2：すでにgithubと連携してあったTCADフォルダもプロジェクトを開いても反応してくれない
+
+    参考
+    https://qiita.com/qualitia_cdev/items/8315e6d7badbb5ddd0c6
+
+    https://nplll.com/2019/10/macos-update-in-trouble/
+
+    どうやらhttpsのためのhelperがないかららしい。gitのバージョンが古いのが原因っぽい？(2番目の参考サイト)
+    そのままgitをアプデしてはつまらないので、インストールされてるgitのバージョンと最新バージョンを確認してみる。
+
+    git —versionで確認すると、2.30.1が入ってる模様。最新版は(https://git-scm.com/)
+    2.32.0の模様
+
+    gitのアプデをするのにhomebrewを使うことにしたが、なぜかM1 Macには入ってなかったので、https://www.teamxeppet.com/macbook-m1-homebrew-install/
+    を参考にインスコ
+
+    homebrewのインストールが済んだ。次にパスを通す必要があるらしい。
+    以下の2つ
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/akibaatsuhiro/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    を打ちこめっていうのでその通りにした。brew helpコマンドを打つとちゃんとhelpが出てきたので、上手く行った模様。
+
+    brew -v と打つとバージョン3.2.6が入ってることがわかった。
+
+    ということでgitのアプデを行う。
+    brew install git
+
+    その場でバージョンを確認すると、2.30.1のまま。うまく行ってないのかと思いきや、ターミナルのウィンドウを開いたままだと新しいgitのパスが変わらないことが原因らしい。ターミナルを再起動してもう一回確認すると、2.32.0が入ってることが確認できた。
+
+    てかアップデートするなら
+    brew upgrade git
+    でええやんけ
+
+
+    上手にできました
+  </body>
+
+
+</html>
