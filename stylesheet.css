@@ -55,7 +55,7 @@
 }
 
 #nav li {
-  width: 140px;
+  width: 100px;
   text-align: center;
   background: #ddd;
   /*float: left;*/
@@ -64,7 +64,7 @@
   line-height: 50px;
   margin-right: 15px;
   margin-bottom: 50px;
-  padding: 20px;
+  padding: 10px;
 }
 
 #nav li a {
