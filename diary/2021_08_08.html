@@ -42,31 +42,40 @@
 
     https://nplll.com/2019/10/macos-update-in-trouble/
 
-    どうやらhttpsのためのhelperがないかららしい。gitのバージョンが古いのが原因っぽい？(2番目の参考サイト)
-    そのままgitをアプデしてはつまらないので、インストールされてるgitのバージョンと最新バージョンを確認してみる。
+    どうやらhttpsのためのhelperがないかららしい。gitのバージョンが古いのが原因っぽい？(2番目の参考サイト)<br>
+    そのままgitをアプデしてはつまらないので、インストールされてるgitのバージョンと最新バージョンを確認してみる。<br><br>
 
-    git —versionで確認すると、2.30.1が入ってる模様。最新版は(https://git-scm.com/)
-    2.32.0の模様
+    git —versionで確認すると、2.30.1が入ってる模様。最新版は(https://git-scm.com/)<br>
+    2.32.0の模様<br><br>
 
     gitのアプデをするのにhomebrewを使うことにしたが、なぜかM1 Macには入ってなかったので、https://www.teamxeppet.com/macbook-m1-homebrew-install/
-    を参考にインスコ
+    を参考にインスコ<br><br>
 
-    homebrewのインストールが済んだ。次にパスを通す必要があるらしい。
-    以下の2つ
+    homebrewのインストールが済んだ。次にパスを通す必要があるらしい。<br>
+    以下の2つ<br>
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/akibaatsuhiro/.zprofile
+    <br>
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    <br>
     を打ちこめっていうのでその通りにした。brew helpコマンドを打つとちゃんとhelpが出てきたので、上手く行った模様。
+    <br><br>
 
     brew -v と打つとバージョン3.2.6が入ってることがわかった。
+    <br><br>
 
     ということでgitのアプデを行う。
+    <br>
     brew install git
+    <br>
 
-    その場でバージョンを確認すると、2.30.1のまま。うまく行ってないのかと思いきや、ターミナルのウィンドウを開いたままだと新しいgitのパスが変わらないことが原因らしい。ターミナルを再起動してもう一回確認すると、2.32.0が入ってることが確認できた。
+    その場でバージョンを確認すると、2.30.1のまま。うまく行ってないのかと思いきや、ターミナルのウィンドウを開いたままだと新しいgitのパスが変わらないことが原因らしい。
+    <br>
+    ターミナルを再起動してもう一回確認すると、2.32.0が入ってることが確認できた。
 
-    てかアップデートするなら
-    brew upgrade git
-    でええやんけ
+    <br>
+    てかアップデートするなら<br>
+    brew upgrade git<br>
+    でええやんけ<br><br>
 
 
     上手にできました
