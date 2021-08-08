@@ -19,34 +19,49 @@
     <p>
       <blockquote>
         https://github.com/Akibachof
-      </blockquote>
-      <br>
-      から
-      <blockquote>
+        <br>
+        から
+        <br>
         git clone https://github.com/Akibachof/bacho_english.git
         <br>
         と
+        <br>
         git clone https://github.com/Akibachof/bacho_programming.git
         <br>
       </blockquote>
+
       のコマンドを使って、web公開したサイトのリモートリポジトリとローカルを連携することで、atomからサイトを操作したい。
     <p/>
 
 
 
+    <p>
+      webサイトを公開するためにgithubとローカルを紐付けしようとしたらエラーが出た(gitcloneとかするとき)。
 
-    webサイトを公開するためにgithubとローカルを紐付けしようとしたらエラーが出た。(gitcloneとかするとき)
+      そのため、
+      <a href="https://qiita.com/kooohei/items/6aada548eeb785dd2c91">https://qiita.com/kooohei/items/6aada548eeb785dd2c91</a>
+      を参考にコマンドラインデベロッパーツールとやらをDLした
+      <br>
+      → このエラーは解決
+    </p>
 
-    そのためhttps://qiita.com/kooohei/items/6aada548eeb785dd2c91
-    を参考にコマンドラインデベロッパーツールとやらをDLした
 
-    ↑のエラーは解決
+    <p>
+      続いて
+      <br>
+        <blockquote cite="http://">
+          fatal: Unable to find remote helper for 'https'
+        </blockquote>
+      というエラーが出た。
+      <br>
+      問題点1：gitcloneでリモートからコピーしてきたディレクトリがatom上で全然反応してくれない(pullとかpushのボタンが出ない)
+      <br>
+      問題点2：すでにgithubと連携してあったTCADフォルダもプロジェクトを開いても反応してくれない
+    </p>
 
-    続いて
-    fatal: Unable to find remote helper for 'https'
-    というエラーが出た。
-    問題点1：gitcloneでリモートからコピーしてきたディレクトリがatom上で全然反応してくれない(pullとかpushのボタンが出ない)
-    問題点2：すでにgithubと連携してあったTCADフォルダもプロジェクトを開いても反応してくれない
+      
+
+
 
     参考
     https://qiita.com/qualitia_cdev/items/8315e6d7badbb5ddd0c6
