@@ -8,7 +8,7 @@
 
 
   <body>
-    <h1>勉強日記 2021/08/15</h1>
+    <h1 class="title">勉強日記 2021/08/15</h1>
 
     <h2>目標</h2>
     1. ページ上部にページ内容のリストを作り、クリックするとページ内ジャンプできるようにしたい
@@ -43,8 +43,7 @@
 
 
     <h3>2. リストの要素をタブ内に収納</h3>
-    <a href="https://code-kitchen.dev/html/details-summary/#css%E3%81%A7%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%E3%82%92%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">
-    CSSでアコーディオンをカスタマイズ </a>を参考にした。<br>
+    <a href="https://code-kitchen.dev/html/details-summary/">CSSでアコーディオンをカスタマイズ</a>を参考にした。<br>
     タブ内に要素をしまうことを通称"アコーディオン"というらしい。書き方は以下の通り
     <pre>
       <code>
@@ -66,6 +65,28 @@
 
 
     <h3>3. アコーディオンの動きを滑らかにする</h3>
+    2.の時と同じく<a href="https://code-kitchen.dev/html/details-summary/">CSSでアコーディオンをカスタマイズ</a>を参考にした。<br>
+    結論から言えばcssをいじれば良い。
+    <blockquote >
+      <pre>
+        details[open] .News {
+          animation: fadeIn 1.0s ease
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0; /* 透明 */
+            transform: translateY(-10px); /* 上から表示 */
+          }
+          100% {
+            opacity: 1;
+            transform: none;
+          }
+        }
+      </pre>
+    </blockquote>
+    を入れてやることで所望の動作が得られる。<br>
+    今回はアコーディオンの中に入る要素にclass="News"を入れているのでこのような形となっている。
 
     <br><br><br>
 
@@ -94,9 +115,6 @@
       </pre>
     </blockquote>
     これで綺麗に消えた。
-
-
-
 
 
 
