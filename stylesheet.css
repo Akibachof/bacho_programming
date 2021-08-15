@@ -139,6 +139,21 @@ a:hover {
   /*#F5CB11,#FAA537,#C4A30E,#FAA537*/
 }
 
+details[open] .accordion {
+  animation: fadeIn 1.0s ease
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* 透明 */
+    transform: translateY(-10px); /* 上から表示 */
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .python {
   margin-bottom: 1px;
 }
