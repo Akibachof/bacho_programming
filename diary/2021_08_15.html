@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>2021/8/15</title>
+  </head>
+
+
+  <body>
+    <h1>勉強日記 2021/08/15</h1>
+
+    <h2>目標</h2>
+    1. ページ上部にページ内容のリストを作り、クリックするとページ内ジャンプできるようにしたい
+    <br>
+    2. リスト表示された内容をタブ内に収納し、クリックすると表示されるようにしたい
+    <br>
+    3. 2.で作成したタブをクリックした時の動作を滑らかにしたい
+    <br><br>
+
+    <h3>1.1. リストの作成</h3>
+    <a href="http://webfeelfree.com/css-ul-ol-li-center/">http://webfeelfree.com/css-ul-ol-li-center/</a>
+    と
+    <a href="https://uxmilk.jp/60712">https://uxmilk.jp/60712</a>
+    を参考にした。<br>
+    html本文にulを設け、id="nav"とした。idはcrassとは異なり、同じindexファイルの中で一度しか使えないらしい。<br>
+    そしてその内部にliを設け、各liの中にページ内のテーマ(Pythonとかその他とか)を作成した。<br>
+    次にcssをいじる。cssに
+    <blockquote>
+      #nav li {
+        display: inline
+      }
+    </blockquote>
+    を加えてやることで、liの要素が横一列になる。
+
+    <h3>1.2. ページ内ジャンプ</h3>
+    1-1で作成したliでは、a href="#hoge" を挟んでいる。これをつけることで、li要素をクリックした時に
+    同じid名を持っている場所までジャンプできるようになる。すなわち、
+    <blockquote>
+      id="hoge"
+    </blockquote>
+    を持つ場所までページ内ジャンプができるようになる。<br><br><br>
+
+
+    <h3>2. リストの要素をタブ内に収納</h3>
+    <a href="https://code-kitchen.dev/html/details-summary/#css%E3%81%A7%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%E3%82%92%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">
+    CSSでアコーディオンをカスタマイズ </a>を参考にした。<br>
+    タブ内に要素をしまうことを通称"アコーディオン"というらしい。書き方は以下の通り
+    <pre>
+      <code>
+        &lt;details&gt;
+            &lt;summary&gt;pandas&lt;/summary&gt;
+            &lt;p&gt;&lt;a href="URL"&gt;ショートカット名&lt;p&gt;&lt;/a&gt
+        &lt;details/&gt;
+      </code>
+    </pre>
+
+    これにより、
+    <details open>
+      <summary>pandas</summary>
+      <p><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html#user-guide" target="_blank">pandas公式</a></p>
+      <p><a href="http://nogizaka46.com">乃木坂46公式サイト</a></p>
+    </details><br>
+    のような表示が可能となる。また、上記のコードを(&lt;details/&gt;とか丸ごと)ページに直接表示するために、"実態参照文字"を使っている。
+    <br><br><br>
+
+
+    <h3>3. アコーディオンの動きを滑らかにする</h3>
+
+
+
+
+
+
+
+    <br><br><br><br><br><br>
+
+  </body>
+
+
+</html>
