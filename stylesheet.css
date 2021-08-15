@@ -128,6 +128,7 @@
 
 a {
   color: #3E5FB5;
+  text-decoration: none;
 }
 
 a:hover {
@@ -139,7 +140,8 @@ a:hover {
   /*#F5CB11,#FAA537,#C4A30E,#FAA537*/
 }
 
-details[open] .accordion {
+
+details[open] .site_url {
   animation: fadeIn 1.0s ease
 }
 
@@ -153,6 +155,7 @@ details[open] .accordion {
     transform: none;
   }
 }
+
 
 .python {
   margin-bottom: 1px;
