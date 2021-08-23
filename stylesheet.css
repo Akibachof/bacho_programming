@@ -52,7 +52,8 @@
     border:3px solid #313131; /*文字の周りに線を描く*/
     border-radius: 5px; /*線の角に丸みを付ける*/
     /* border-radius: 5px; */
-    letter-spacing: 3px; /*文字と文字の間隔をあける*/
+    letter-spacing: normal; /*文字と文字の間隔をあける*/
+    /* letter-spacing: 3px; */
     font-weight: bold; /*文字の太さの変更*/
     margin-bottom: 4%;
     /* margin-bottom: 50px; */
@@ -77,11 +78,13 @@
 }
 
 #nav li {
+  /* width: 17%; */
   width: 100px;
   text-align: center;
   vertical-align: middle;
   background: #ddd;
   /*float: left;*/
+  /* display: inline; */
   display: inline;
   /* height: 5%;
   line-height: 100%;
@@ -102,12 +105,13 @@
   font-weight: bold;
   color: #000000;
 }
-/*navの装飾 ~完~*/
 
 #nav li a:hover{
     color: #F71156;    /*文字色の変更*/
     transition: 0.2s;   /*ホバー時の動きをなめらかにする*/
 }
+
+/*navの装飾 ~完~*/
 
 .body{
   /* position: relative; */
